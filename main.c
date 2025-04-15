@@ -29,7 +29,7 @@ typedef struct {
 // Declaring all the functions used 
 // Registration related functions
 void save_car_data(GtkWidget *button, gpointer user_data);
-void on_register_car_clicked(GtkWidget *widget, gpointer data);
+static void on_register_car_clicked(GtkWidget *widget, gpointer data);
 
 // Status Update related functions
 void on_check_status_clicked(GtkWidget *widget, gpointer data);
@@ -57,12 +57,12 @@ int main(int argc, char *argv[]) {
     GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 
     //Gives a title at the top of window
-    gtk_window_set_title(GTK_WINDOW(window), "C Mini Project");
+    gtk_window_set_title(GTK_WINDOW(window), "C Mini-Project");
 
     //Sets the size of the window
     gtk_window_set_default_size(GTK_WINDOW(window), 800, 600);
     gtk_container_set_border_width(GTK_CONTAINER(window), 20);
-    
+
     //Closes the window when clicked the X button on the top right corner
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
